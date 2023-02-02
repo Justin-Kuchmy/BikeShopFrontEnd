@@ -1,0 +1,19 @@
+<div class="body">
+    <mat-grid-list *ngIf="hideProductPage" class="product-details-card" cols="1" rowHeight="500px">
+        <mat-grid-tile>
+            <mat-list cols="1" rowHeight="50:1" class="product-details-list">
+                <mat-list-item class="product-details-item">{{"product_name:  "}}{{selectedProduct.product_name}}</mat-list-item>
+                <mat-list-item class="product-details-item">{{"brand_id:      "}}{{selectedProduct.brand_id}}</mat-list-item>
+                <mat-list-item class="product-details-item">{{"category_id:   "}}{{selectedProduct.category_id}}</mat-list-item>
+                <mat-list-item class="product-details-item">{{"model_year:    "}}{{selectedProduct.model_year}}</mat-list-item>
+                <mat-list-item class="product-details-item">{{"list_price:    $"}}{{selectedProduct.list_price}}</mat-list-item>
+            </mat-list>
+        </mat-grid-tile>
+  
+    </mat-grid-list> 
+    <div class="mat-pad-sm">
+        <span>
+            <button mat-raised-button type="button" (click)="cancelled.emit(selectedProduct)">Cancel</button>
+        </span>
+    </div> 
+</div>

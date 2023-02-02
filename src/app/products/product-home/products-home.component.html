@@ -1,0 +1,22 @@
+<mat-card *ngIf="hideEditForm">
+    <mat-card-content *ngIf="Products$ | async as prod; else loading">
+          <app-product-list [products]="prod" (selectedItem)="select($event)"></app-product-list>
+      </mat-card-content>
+      <ng-template #loading class="my-primary-text">Loading Employees from server...</ng-template>
+</mat-card>
+
+<mat-card *ngIf="!hideEditForm">
+    <mat-card-footer layout="row">
+      <mat-card-title
+        ><span>{{ msg }}..</span></mat-card-title
+      >
+    </mat-card-footer>
+    <mat-card-content>
+      <app-product-details
+      [selectedProduct]="product"
+      (cancelled)="cancel('cancelled')"
+      >
+      </app-product-details>
+    </mat-card-content>
+  </mat-card>
+

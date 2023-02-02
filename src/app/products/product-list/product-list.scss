@@ -1,0 +1,23 @@
+.product-list
+{
+    border: 0px solid blue;
+}
+.product-tile {
+    border: 0px solid black;
+}
+
+.product-card {
+    height: 250px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 5px;
+}
+
+.product-img {
+    position: absolute;
+    height: 275px;
+    width: 275px;
+    left: 0;
+    top: 0;
+
+}

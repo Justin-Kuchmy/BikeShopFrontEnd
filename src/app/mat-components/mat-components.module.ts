@@ -15,6 +15,7 @@ import { MatSortModule } from '@angular/material/sort'
 import { MatExpansionModule } from '@angular/material/expansion'; 
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatGridListModule } from '@angular/material/grid-list'
 
 
 
@@ -34,6 +35,7 @@ const MaterialComponents = [
     MatExpansionModule,
     MatDialogModule,
     MatPaginatorModule,
+    MatGridListModule
 
 ];
 
