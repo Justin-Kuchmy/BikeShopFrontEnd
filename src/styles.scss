@@ -1,1 +1,92 @@
 /* You can add global styles to this file, and also import other style files */
+
+// custom theme
+@import "custom-theme.scss";
+.my-primary-text {
+ color: mat-color($my-app-primary);
+}
+.my-accent-text {
+ color: mat-color($my-app-accent);
+}
+.margin-right-2 {
+ margin-right: 2vw !important;
+}
+mat-list-item:nth-child(odd)
+{
+    background-color:white;
+   }
+mat-list-item:nth-child(even) {
+background-color:#eeeeee;
+}
+
+img{
+ position: relative;
+ left: 45%;
+}
+mat-card {
+    box-shadow: 1px solid black;
+}
+mat-card-footer{
+    color: skyblue;
+    float: right;
+    font-size: medium;
+    padding-right: 0%;
+    padding-top: 5vh;
+    
+}
+   
+.padtop15 {
+    padding-top: 15vh;
+}
+.material-icons.addicon {
+    font-size: 3.5em;
+    position: absolute;
+    bottom: 0vh;
+    right: 0vw;
+    width: 50px;
+    height: 50px;
+}
+   
+mat-form-field {
+    width: 90%;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+.mat-pad-sm
+{
+    flex-direction: flex; 
+    
+}
+  table {
+    width: 100%;
+   
+    }
+    .center-header{
+    flex-direction: column;
+    justify-content: center;
+    font-weight: bolder;
+    margin-left:25px;
+    }
+    
+    .mat-cell {
+    text-align: center;
+    justify-content:center;
+    }
+    
+    .mat-row:nth-child(odd){
+    background-color:#eeeeee;
+    text-align: center;
+    }
+    
+    .mat-row.ng-star-inserted:nth-child(even) {
+    background-color: white;
+    text-align: center;
+    }
+    
+    button.mat-sort-header-button {
+    margin-left: 5vw;
+    }
+   
+    .center-header {
+        font-size: larger;
+    }

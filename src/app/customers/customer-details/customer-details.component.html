@@ -1,0 +1,111 @@
+<mat-card *ngIf="hideEditForm && hideOrderPage">
+    <form [formGroup]="customerForm" (ngSubmit)="updateSelectedCustomer()" class="formGroup">
+    
+        <div>
+            <div class="row-md-4 mb-3">
+                <label for="validationTooltip01">Customer ID</label>
+                <input type="text" readonly class="form-control" id="validationTooltip01" placeholder="customer id" value="" required formControlName="customer_id" autofocus>
+                <div class="valid-tooltip">
+                  Looks good!
+                </div>
+              </div>
+            <div class="row-md-4 mb-3">
+              <label for="validationTooltip02">First name</label>
+              <input type="text" class="form-control" id="validationTooltip02" placeholder="First name" value="John" required formControlName="first_name" autofocus>
+              <div class="valid-tooltip">
+                Looks good!
+              </div>
+            </div>
+            <div class="row-md-4 mb-3">
+              <label for="validationTooltip03">Last name</label>
+              <input type="text" class="form-control" id="validationTooltip03" placeholder="Last name" value="Smith" required formControlName="last_name" autofocus>
+              <div class="valid-tooltip">
+                Looks good!
+              </div>
+            </div>
+            <div class="row-md-4 mb-3">
+              <label for="validationTooltipEmail">Email</label>
+              <div class="input-group">
+                <input type="text" class="form-control" id="validationTooltipEmail" placeholder="Email" aria-describedby="validationTooltipEmailPrepend" required formControlName="email" autofocus>
+                <div class="invalid-tooltip">
+                  Please enter a valid Email.
+                </div>
+              </div>
+            </div>
+            <div class="row-md-4 mb-3">
+                <label for="validationTooltipPhone">Phone</label>
+                <div class="input-group">
+                  <input type="text" class="form-control" id="validationTooltipPhone" placeholder="Phone" aria-describedby="validationTooltipPhonePrepend" required formControlName="phone" autofocus>
+                  <div class="invalid-tooltip">
+                    Please enter a valid Phone.
+                  </div>
+                </div>
+              </div>
+    
+              <div class="row-md-4 mb-3">
+                <label for="validationTooltipStreet">Street</label>
+                <div class="input-group">
+                  <input type="text" class="form-control" id="validationTooltipStreet" placeholder="Street" aria-describedby="validationTooltipStreetPrepend" required formControlName="street" autofocus>
+                  <div class="invalid-tooltip">
+                    Please enter a valid Street.
+                  </div>
+                </div>
+              </div>
+              
+            <div class="row-md-6 mb-3">
+              <label for="validationTooltip04">City</label>
+              <input type="text" class="form-control" id="validationTooltip04" placeholder="City" required formControlName="city" autofocus>
+              <div class="invalid-tooltip">
+                Please provide a valid city.
+              </div>
+            </div>
+            <div class="row-md-3 mb-3">
+              <label for="validationTooltip05">State</label>
+              <input type="text" class="form-control" id="validationTooltip05" placeholder="State" required formControlName="state" autofocus>
+              <div class="invalid-tooltip">
+                Please provide a valid state.
+              </div>
+            </div>
+            <div class="row-md-3 mb-3">
+              <label for="validationTooltip06">Zip</label>
+              <input type="text" class="form-control" id="validationTooltip06" placeholder="Zip" required formControlName="zip_code" autofocus>
+              <div class="invalid-tooltip">
+                Please provide a valid zip.
+              </div>
+            </div>
+          </div>
+    
+        <div class="mat-pad-sm">
+            <span>
+                <button mat-raised-button type="submit" 
+                (click)="updateSelectedCustomer()">Save</button>
+                </span>
+            <span>
+                <button *ngIf="selectedCustomer.customer_id" mat-raised-button type="button"
+                (click)="openDeleteDialog(selectedCustomer)">Delete</button>
+            </span> 
+            <span>
+                <button mat-raised-button type="button" (click)="cancelled.emit(selectedCustomer)">Cancel</button>
+            </span>
+            <div class="ViewOrders">
+                <span>
+                    <button mat-raised-button type="submit" (click)="ClickedOrders()">View Orders</button>
+                </span>
+            </div>
+        </div>
+    
+    </form>
+</mat-card>
+<mat-card *ngIf="!hideOrderPage">
+    <mat-card-footer layout="row">
+      <mat-card-title
+        ><span>{{ msg }}..</span></mat-card-title
+      >
+    </mat-card-footer>
+    <mat-card-content>
+        <app-customers-orders
+        [selectedCustomerChild]="selectedCustomer"
+        (cancelled)="cancel('cancelled')">
+        </app-customers-orders>
+    </mat-card-content>
+  </mat-card>

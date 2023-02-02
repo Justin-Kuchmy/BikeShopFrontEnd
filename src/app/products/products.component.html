@@ -1,0 +1,9 @@
+<mat-card>
+    <app-product-list></app-product-list>
+    <mat-card-content *ngIf="Products$ | async as prod; else loading">
+        <mat-list flex>
+          <app-product-list [products]="prod"></app-product-list>
+        </mat-list>
+      </mat-card-content>
+      <ng-template #loading class="my-primary-text">Loading Employees from server...</ng-template>
+</mat-card>

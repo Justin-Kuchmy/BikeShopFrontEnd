@@ -1,0 +1,15 @@
+<div class="mat-pad-sm">
+  <mat-card>
+    <mat-card-content *ngIf="customersOrders$ | async as odr; else loading">
+      <mat-list flex>
+        <app-customers-orders-list [orders]="odr"></app-customers-orders-list>
+      </mat-list>
+    </mat-card-content>
+    <ng-template #loading class="my-primary-text">Loading Employees from server...</ng-template>
+  </mat-card>
+  <span>
+    <button mat-raised-button type="button" (click)="cancelled.emit()">
+      Cancel
+    </button>
+  </span>
+</div>
