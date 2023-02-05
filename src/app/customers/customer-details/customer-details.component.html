@@ -91,16 +91,11 @@
                     <button mat-raised-button type="submit" (click)="ClickedOrders()">View Orders</button>
                 </span>
             </div>
-        </div>
-    
+        </div> 
     </form>
 </mat-card>
+
 <mat-card *ngIf="!hideOrderPage">
-    <mat-card-footer layout="row">
-      <mat-card-title
-        ><span>{{ msg }}..</span></mat-card-title
-      >
-    </mat-card-footer>
     <mat-card-content>
         <app-customers-orders
         [selectedCustomerChild]="selectedCustomer"
@@ -108,3 +103,9 @@
         </app-customers-orders>
     </mat-card-content>
   </mat-card>
+
+  <mat-card *ngIf="hideOrderPage">
+    <mat-card-footer class="details-message" layout="column">
+        <mat-card-title><span>{{ msg }}</span></mat-card-title>
+     </mat-card-footer>
+</mat-card>

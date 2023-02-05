@@ -1,15 +1,5 @@
 <mat-card *ngIf="hideEditForm">
   <form class="search-bar">
-    <!-- <mat-form-field>
-      <span matPrefix> </span>
-      <input 
-      type="tel" 
-      matInput placeholder="Search ID" 
-      name="searchID" 
-      [(ngModel)]="SearchID"/>
-      <button matSuffix mat-button><mat-icon (click)="searchByID()">search</mat-icon></button>
-    </mat-form-field> -->
-
     <mat-form-field>
       <span matPrefix> </span>
       <input 
@@ -79,12 +69,11 @@
 
 <mat-card *ngIf="!hideEditForm">
     <mat-card-footer layout="row">
-      <mat-card-title
-        ><span>{{ msg }}..</span></mat-card-title
-      >
+      <!-- <mat-card-title><span>{{ msg }}</span></mat-card-title> -->
     </mat-card-footer>
     <mat-card-content>
       <app-customer-details
+      [msg]="msg"
       [selectedCustomer]="customers"
       (cancelled)="cancel('cancelled')"
       (saved)="save($event)"

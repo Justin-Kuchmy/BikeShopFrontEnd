@@ -25,10 +25,11 @@ export class CustomerDetailsComponent implements OnInit {
     state: '',
     zip_code: '',
   };
-  msg: string = "";
+  //msg: string = "";
   hideOrderPage: boolean = true;
   customersOrders$?: Observable<orders[]>;
   @Input() customers: customers[] | null = null;
+  @Input() msg: string | null = null;
   @Output() cancelled = new EventEmitter();
   @Output() saved = new EventEmitter();
   @Output() deleted = new EventEmitter();

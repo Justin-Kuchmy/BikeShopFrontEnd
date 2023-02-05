@@ -70,7 +70,8 @@ export class CustomerHomeComponent implements OnInit {
     this.searchName = '';
     this.initialLoad = true;
     this.sort = new MatSort();
-    (this.msg = ''), (this.hideEditForm = true);
+    this.msg = ''; 
+    this.hideEditForm = true;
   }
 
   ngOnInit(): void {
